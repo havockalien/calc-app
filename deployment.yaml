@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calc-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calc-app
+  template:
+    metadata:
+      labels:
+        app: calc-app
+    spec:
+      containers:
+      - name: calc-app
+        image: havocalien/calc-app:latest
+        ports:
+        - containerPort: 5000

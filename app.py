@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify
 import calc  # your existing calculator module
 
 app = Flask(__name__)
+@app.route('/')
+def home():
+    return 'Welcome to the Calculator API!'
 
 @app.route("/add", methods=["GET"])
 def add():
